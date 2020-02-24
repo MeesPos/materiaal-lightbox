@@ -59,8 +59,6 @@ main{
     height: 100vh;
     width: 100vw;
     background: rgba(0,0,0, 0.6);
-    overflow: auto;
-    padding: 2em 4em;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -68,6 +66,41 @@ main{
 .modaal-inhoud{
     background-color: #fff;
     padding: 1em 2em;
-    width: 70vw;
-    overflow: auto;
+    max-width: 50vw;
+    max-height: calc(90vh - 2em);
+    margin-top: 1em;
+    overflow: hidden auto;
+    animation: vanOnderen .7s cubic-bezier(.17,.67,.62,1.48);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
+
+.sk{
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.sk:hover{
+    color: red;
+}
+
+@keyframes vanOnderen {
+    0% {margin-top: 100vh;}
+    100% {margin-top: 0;}
+}
+
+@-webkit-keyframes vanOnderen {
+    0% {margin-top: 100vh;}
+    100% {margin-top: 0;}
+}
+
+@-o-keyframes vanOnderen {
+    0% {margin-top: 100vh;}
+    100% {margin-top: 0;}
+}
+
+@-moz-keyframes vanOnderen {
+    0% {margin-top: 100vh;}
+    100% {margin-top: 0;}
 }
