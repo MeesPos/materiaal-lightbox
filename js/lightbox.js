@@ -12,14 +12,14 @@ for(let i=0; i<watWegMoet.length; i++) {
 
 const maakSluitKnop = document.createElement('i');
 maakSluitKnop.className = 'fas fa-times-circle sk';
-maakSluitKnop.addEventListener('click', verwijderModaal)
+maakSluitKnop.addEventListener('click', this.verwijderModaal)
 
 function maakModaal(num) {
     console.log('geklikt op '+num)
     console.log(alleInfo[num].innerHTML)
     let modaal = document.createElement('div');
     modaal.id= 'modaal';
-    modaal.addEventListener('click', verwijderModaal);
+    modaal.addEventListener('click', this.verwijderModaal);
     let modaalInhoud = document.createElement('div');
     modaalInhoud.className = 'modaal-inhoud';
     modaalInhoud.innerHTML = alleInfo[num].innerHTML;
