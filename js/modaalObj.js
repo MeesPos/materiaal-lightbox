@@ -5,11 +5,11 @@ const modaalObj = {
     alleInfo    : [],
     // Methods
     verwijderModaal: function() {
-        document.getElementById("modaal").remove();
+        document.getElementById('modaal').remove();
     },
     maakModaal: function(num) {
         console.log('geklikt op '+num)
-        console.log(this.alleInfo[num].innerHTML)
+        console.log(this.alleInfo[num]);
         let modaal = document.createElement('div');
         modaal.id= 'modaal';
         modaal.addEventListener('click', this.verwijderModaal);
@@ -24,16 +24,16 @@ const modaalObj = {
         document.body.append(modaal);
     },
 
-    initials = function() {
-        for(let i=0; i<this.watWegMoet.length; i++) {
-            this.alleInfo.push(watWegMoet [i]);
+    initials: function() {
+        for(let i=0; i<this.deKleintjes.length; i++) {
+            this.alleInfo.push(this.deKleintjes[i]);
             // element uit de DOM verwijderen
-            this.watWegMoet [i].remove(); 
+            this.deKleintjes[i].remove(); 
         }
 
-        for(let i=0; i<this.deKleintjes.length; i++) {
-            this.deKleintjes[i].addEventListener('click', function() {
-                maakModaal(i)
+        for(let i=0; i<this.watWegMoet.length; i++) {
+            this.watWegMoet[i].addEventListener('click', function() {
+                modaalObj.maakModaal(i)
             })
         }
     }
@@ -41,4 +41,4 @@ const modaalObj = {
 
 const maakSluitKnop = document.createElement('i');
 maakSluitKnop.className = 'fas fa-times-circle sk';
-maakSluitKnop.addEventListener('click', verwijderModaal)
+maakSluitKnop.addEventListener('click', this.verwijderModaal);
