@@ -41,4 +41,4 @@ const modaalObj = {
 
 const maakSluitKnop = document.createElement('i');
 maakSluitKnop.className = 'fas fa-times-circle sk';
-maakSluitKnop.addEventListener('click', verwijderModaal);
+maakSluitKnop.addEventListener('click', modaalObj.verwijderModaal);
