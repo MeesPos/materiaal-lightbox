@@ -25,14 +25,14 @@ const modaalObj = {
     },
 
     initials: function() {
-        for(let i=0; i<this.deKleintjes.length; i++) {
-            this.alleInfo.push(this.deKleintjes[i]);
+        for(let i=0; i<this.watWegMoet.length; i++) {
+            this.alleInfo.push(this.watWegMoet[i]);
             // element uit de DOM verwijderen
-            this.deKleintjes[i].remove(); 
+            this.watWegMoet[i].remove(); 
         }
 
-        for(let i=0; i<this.watWegMoet.length; i++) {
-            this.watWegMoet[i].addEventListener('click', function() {
+        for(let i=0; i<this.deKleintjes.length; i++) {
+            this.deKleintjes[i].addEventListener('click', function() {
                 modaalObj.maakModaal(i)
             })
         }
